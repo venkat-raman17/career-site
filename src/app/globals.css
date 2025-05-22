@@ -2,25 +2,43 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #1a237e; /* Deep blue for text */
+  --primary: #1976d2;    /* Blue */
+  --primary-hover: #1565c0;
+  --accent: #ffd600;     /* Yellow */
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-accent: var(--accent);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+/* Remove dark mode overrides */
 
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Optional: Utility classes for primary and accent colors */
+.bg-primary {
+  background-color: var(--primary) !important;
+}
+.bg-primary-hover:hover {
+  background-color: var(--primary-hover) !important;
+}
+.text-primary {
+  color: var(--primary) !important;
+}
+.text-accent {
+  color: var(--accent) !important;
+}
+.bg-accent {
+  background-color: var(--accent) !important;
 }
